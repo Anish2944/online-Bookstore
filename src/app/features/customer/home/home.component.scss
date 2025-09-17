@@ -33,4 +33,5 @@
       cursor: pointer;
     }
   }
-  
+  .grid { display:grid; grid-template-columns: repeat(2, minmax(160px, 1fr)); gap: 12px; }
+a { padding: 10px; border:1px solid #eee; border-radius:8px; }

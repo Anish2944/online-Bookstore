@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     console.log("AutoLogin RUNNING...")
     this.auth.autoLogin();
-    this.router.navigate(['/home']);
   }
   title = 'online-bookstore';
 }

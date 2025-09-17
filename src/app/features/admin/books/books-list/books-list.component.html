@@ -1,0 +1,31 @@
+<header class="header">
+    <h2>Books</h2>
+    <button (click)="create()">New Book</button>
+  </header>
+  
+  <table *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>Title</th><th>Author</th><th>Category</th><th>Price</th><th>Stock</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of books">
+        <td>
+          <img *ngIf="b.imageUrl" [src]="b.imageUrl" alt="" width="32" height="32" />
+          {{ b.title }}
+        </td>
+        <td>{{ b.author?.name }}</td>
+        <td>{{ b.category?.name }}</td>
+        <td>{{ b.price | currency }}</td>
+        <td>{{ b.stock }}</td>
+        <td>
+          <button (click)="edit(b)">Edit</button>
+          <button (click)="remove(b)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p *ngIf="loading">Loading...</p>
+  

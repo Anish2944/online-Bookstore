@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './register.component.html'
 })
 export class RegisterComponent {
   name = '';
   email = '';
   password = '';
-  role = 'User';
+  role = 'Customer';
 
   constructor(private auth: AuthService, private router: Router) {}
 

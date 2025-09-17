@@ -1,0 +1,6 @@
+<h2>{{ id ? 'Edit Category' : 'New Category' }}</h2>
+<form (ngSubmit)="save()">
+  <label>Name <input [(ngModel)]="name" name="name" required /></label>
+  <button type="submit">Save</button>
+  <a routerLink="/admin/categories">Cancel</a>
+</form>

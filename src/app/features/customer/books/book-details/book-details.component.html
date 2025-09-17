@@ -1,0 +1,17 @@
+<ng-container *ngIf="book">
+    <div class="wrap">
+      <img *ngIf="book.imageUrl" [src]="book.imageUrl" alt="{{ book.title }}" />
+      <div>
+        <h2>{{ book.title }}</h2>
+        <p class="meta">{{ book.author?.name }} • {{ book.category?.name }}</p>
+        <p>{{ book.description }}</p>
+        <strong>{{ book.price | currency }}</strong>
+  
+        <div class="row">
+          <label>Qty <input type="number" [(ngModel)]="qty" min="1" /></label>
+          <button (click)="buy()">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  

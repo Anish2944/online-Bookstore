@@ -5,6 +5,7 @@ import { Observable, tap, of, catchError } from 'rxjs';
 import { ApiResponse } from '../core/api-response.model';
 import { AuthResponse } from '../core/user.model';
 import { AuthStore } from './auth.store';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,7 @@ export class AuthService {
   private apiUrl = 'https://localhost:7139/api/auth'; // Your ASP.NET backend
   private platformId = inject(PLATFORM_ID);
 
-  constructor(private http: HttpClient, private authStore: AuthStore) {}
+  constructor(private http: HttpClient, private authStore: AuthStore, private router: Router) {}
 
     // ✅ auto-login
     autoLogin(): void {
@@ -24,6 +25,14 @@ export class AuthService {
               tap(res => {
                 if (res.success && res.data) {
                   this.authStore.setUser(res.data);
+                  if (this.router.url === '/' || this.router.url === '/login') {
+                    if (res.data.role === 'Admin') {
+                      this.router.navigate(['/admin']);
+                    } else {
+                      this.router.navigate(['/home']);
+                    }
+                  }
+                
                 } else {
                   this.logout();
                 }
@@ -44,6 +53,12 @@ export class AuthService {
         if (res.success && res.data) {
           localStorage.setItem('token', res.data.token);
           this.authStore.setUser(res.data);
+
+          if (res.data.role === 'Admin') {
+            this.router.navigate(['/admin']);
+          } else {
+            this.router.navigate(['/home']);
+          }
         }
       })
     );
@@ -55,6 +70,12 @@ export class AuthService {
         if (res.success && res.data) {
           localStorage.setItem('token', res.data.token);
           this.authStore.setUser(res.data);
+          console.log('res.data.role:', res.data.role);
+          if (res.data.role === 'Admin') {
+            this.router.navigate(['/admin']);
+          } else {
+            this.router.navigate(['/home']);
+          }
         }
       })
     );

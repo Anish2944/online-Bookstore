@@ -1,0 +1,18 @@
+<header class="header">
+    <h2>Authors</h2>
+    <button (click)="create()">New Author</button>
+  </header>
+  
+  <ul>
+    <li *ngFor="let a of authors">
+      <div>
+        <strong>{{ a.name }}</strong>
+        <small *ngIf="a.bio"> — {{ a.bio }}</small>
+      </div>
+      <div>
+        <button (click)="edit(a)">Edit</button>
+        <button (click)="remove(a)">Delete</button>
+      </div>
+    </li>
+  </ul>
+  

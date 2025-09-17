@@ -1,0 +1,22 @@
+<header class="topbar" *ngIf="user">
+    <div class="profile">
+      <div class="info">
+        <strong>{{ user.name }}</strong>
+        <small>{{ user.email }}</small>
+      </div>
+      <span class="role">{{ user.role }}</span>
+    </div>
+  
+    <nav>
+      <a *ngIf="user.role === 'Customer'" routerLink="/home">Home</a>
+      <a *ngIf="user.role === 'Customer'" routerLink="/home/orders">My Orders</a>
+  
+      <a *ngIf="user.role === 'Admin'" routerLink="/admin/books">Books</a>
+      <a *ngIf="user.role === 'Admin'" routerLink="/admin/categories">Categories</a>
+      <a *ngIf="user.role === 'Admin'" routerLink="/admin/authors">Authors</a>
+      <a *ngIf="user.role === 'Admin'" routerLink="/admin/orders">Orders</a>
+  
+      <button (click)="logout()">Logout</button>
+    </nav>
+  </header>
+  

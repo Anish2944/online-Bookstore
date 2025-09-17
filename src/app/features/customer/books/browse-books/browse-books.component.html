@@ -1,0 +1,14 @@
+<header class="header">
+    <h2>Browse Books</h2>
+    <input [(ngModel)]="q" placeholder="Search by title/author" />
+  </header>
+  
+  <div class="grid">
+    <article class="card" *ngFor="let b of filtered" (click)="details(b)">
+      <img *ngIf="b.imageUrl" [src]="b.imageUrl" alt="{{ b.title }}" />
+      <h3>{{ b.title }}</h3>
+      <p class="meta">{{ b.author?.name }} • {{ b.category?.name }}</p>
+      <strong>{{ b.price | currency }}</strong>
+    </article>
+  </div>
+  

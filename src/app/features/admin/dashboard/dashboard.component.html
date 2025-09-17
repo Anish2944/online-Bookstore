@@ -1,0 +1,18 @@
+<app-header></app-header>
+<!-- <header class="topbar">
+  <div>
+    <strong>{{ user?.name }}</strong>
+    <small>{{ user?.email }}</small>
+    <span class="role">{{ user?.role }}</span>
+  </div>
+  <button (click)="logout()">Logout</button>
+</header> -->
+
+<h2>Admin Dashboard</h2>
+<router-outlet></router-outlet>
+<nav class="grid">
+  <a routerLink="/admin/books">Books</a>
+  <a routerLink="/admin/categories">Categories</a>
+  <a routerLink="/admin/authors">Authors</a>
+  <a routerLink="/admin/orders">Orders</a>
+</nav>

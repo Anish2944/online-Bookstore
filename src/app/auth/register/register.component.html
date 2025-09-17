@@ -4,8 +4,9 @@
   <input type="email" [(ngModel)]="email" name="email" placeholder="Email" />
   <input type="password" [(ngModel)]="password" name="password" placeholder="Password" />
   <select [(ngModel)]="role" name="role">
-    <option>User</option>
+    <option>Customer</option>
     <option>Admin</option>
   </select>
   <button type="submit">Register</button>
 </form>
+<p>Already have an account? <a routerLink="/login">Login</a></p>

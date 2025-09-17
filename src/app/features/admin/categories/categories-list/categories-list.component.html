@@ -1,0 +1,12 @@
+<header class="header">
+    <h2>Categories</h2>
+    <button (click)="create()">New Category</button>
+  </header>
+  
+  <ul>
+    <li *ngFor="let c of categories">
+      {{ c.name }}
+      <button (click)="edit(c)">Edit</button>
+    </li>
+  </ul>
+  

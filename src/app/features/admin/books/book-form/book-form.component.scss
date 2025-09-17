@@ -1,0 +1,3 @@
+form { display:flex; flex-direction:column; gap:12px; max-width:720px; }
+.row { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+fieldset { border:1px dashed #ddd; padding:12px; display:flex; gap:8px; align-items:center; }

@@ -1,0 +1,7 @@
+<h2>{{ id ? 'Edit Author' : 'New Author' }}</h2>
+<form (ngSubmit)="save()">
+  <label>Name <input [(ngModel)]="name" name="name" required /></label>
+  <label>Bio <textarea [(ngModel)]="bio" name="bio"></textarea></label>
+  <button type="submit">Save</button>
+  <a routerLink="/admin/authors">Cancel</a>
+</form>

@@ -1,0 +1,17 @@
+<app-header></app-header>
+<!-- <header class="topbar">
+  <div>
+    <strong>{{ user?.name }}</strong>
+    <small>{{ user?.email }}</small>
+    <span class="role">{{ user?.role }}</span>
+  </div>
+  <button (click)="logout()">Logout</button>
+</header> -->
+
+<h2>Welcome 👋 {{ user?.name }}</h2>
+<router-outlet></router-outlet>
+<p>Browse our latest books or view your recent orders.</p>
+<nav class="grid">
+  <a routerLink="/home/browse">Browse Books</a>
+  <a routerLink="/home/orders">My Orders</a>
+</nav>

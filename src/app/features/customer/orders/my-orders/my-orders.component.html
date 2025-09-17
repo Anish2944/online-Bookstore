@@ -1,0 +1,13 @@
+<h2>My Orders</h2>
+<div *ngFor="let o of orders" class="card">
+  <header>
+    <strong>#{{ o.id }}</strong>
+    <span>{{ o.orderDate | date:'short' }}</span>
+    <b>{{ o.totalAmount | currency }}</b>
+  </header>
+  <ul>
+    <li *ngFor="let it of o.items">
+      {{ it.bookTitle }} × {{ it.quantity }} — {{ it.unitPrice | currency }}
+    </li>
+  </ul>
+</div>

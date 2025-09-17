@@ -1,0 +1,13 @@
+<h2>All Orders</h2>
+<table>
+  <thead><tr><th>ID</th><th>Date</th><th>User</th><th>Total</th><th>Items</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let o of orders">
+      <td>{{ o.id }}</td>
+      <td>{{ o.orderDate | date:'short' }}</td>
+      <td>{{ o.userId }}</td>
+      <td>{{ o.totalAmount | currency }}</td>
+      <td>{{ o.items.length }}</td>
+    </tr>
+  </tbody>
+</table>
