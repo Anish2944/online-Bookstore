@@ -5,7 +5,7 @@ import { Category } from '../core/models/category.model';
 
 @Injectable({ providedIn: 'root' })
 export class CategoriesService {
-  private base = 'https://localhost:7139/api/Category';
+  private base = 'https://onlinebookstoreapi.onrender.com/api/Category';
 
   constructor(private http: HttpClient) {}
 

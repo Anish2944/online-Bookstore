@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from '../../../shared/header/header.component';
+// import { HeaderComponent } from '../../../shared/header/header.component';
 import { AuthStore } from '../../../auth/auth.store';
 import { AuthService } from '../../../auth/auth.service';
 @Component({
   selector: 'app-customer-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeaderComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

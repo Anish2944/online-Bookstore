@@ -3,11 +3,11 @@ import { AuthStore } from '../../../auth/auth.store';
 import { AuthService } from '../../../auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from '../../../shared/header/header.component';
+// import { HeaderComponent } from '../../../shared/header/header.component';
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeaderComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })

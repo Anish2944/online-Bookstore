@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { RoleGuard } from './auth/role.guard';
-
+import { AdminGuard } from './features/admin/admin.guard';
+import { CustomerGuard } from './features/customer/customer.guard';
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
@@ -10,7 +11,7 @@ export const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./features/customer/customer.module').then(m => m.CustomerModule),
-    canActivate: [AuthGuard, RoleGuard],
+    canActivate: [AuthGuard, RoleGuard, CustomerGuard],
     data: { roles: ['Customer'] } // allow Admin to browse too if you like
   },
 
@@ -19,7 +20,7 @@ export const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./features/admin/admin.module').then(m => m.AdminModule),
-    canActivate: [AuthGuard, RoleGuard],
+    canActivate: [AuthGuard, RoleGuard, AdminGuard],
     data: { roles: ['Admin'] }
   },
 

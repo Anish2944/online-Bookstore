@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7139/api/auth'; // Your ASP.NET backend
+  private apiUrl = 'https://onlinebookstoreapi.onrender.com/api/auth'; // Your ASP.NET backend
   private platformId = inject(PLATFORM_ID);
 
   constructor(private http: HttpClient, private authStore: AuthStore, private router: Router) {}

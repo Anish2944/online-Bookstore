@@ -1,11 +1,11 @@
 
-
 <!-- <nav>
   <a routerLink="/login">Login</a> |
   <a routerLink="/register">Register</a>
 </nav> -->
 <app-loader></app-loader>
 
+<app-header *ngIf="showHeader" ></app-header>
 <!-- Angular will load pages here -->
 <router-outlet></router-outlet>
 

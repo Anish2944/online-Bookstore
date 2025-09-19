@@ -5,7 +5,7 @@ import { Author } from '../core/models/author.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthorsService {
-  private base = 'https://localhost:7139/api/Author';
+  private base = 'https://onlinebookstoreapi.onrender.com/api/Author';
 
   constructor(private http: HttpClient) {}
 
